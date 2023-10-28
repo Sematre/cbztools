@@ -30,7 +30,7 @@ echo -e "${ANSI_BRIGHT_BLACK}(Step 1/3)${ANSI_RESET} Converting epub to pdf..."
 ebook-convert "$1" "${WORK_DIR}/step1.pdf" --pdf-no-cover
 
 echo -e "${ANSI_BRIGHT_BLACK}(Step 2/3)${ANSI_RESET} Extracting images from pdf..."
-pdfimages -v -all "${WORK_DIR}/step1.pdf" "${WORK_DIR}/step2/page"
+pdfimages -all "${WORK_DIR}/step1.pdf" "${WORK_DIR}/step2/page"
 
 echo -e "${ANSI_BRIGHT_BLACK}(Step 3/3)${ANSI_RESET} Packaging cbz file..."
 zip -jr0 "$2" "${WORK_DIR}/step2"/*
